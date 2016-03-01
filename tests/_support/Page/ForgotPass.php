@@ -4,7 +4,7 @@ namespace Page;
 class ForgotPass
 {
     public static $URL = '/customer/account/login/';
-    public static $forgotLink = 'a.f-left';
+    public static $forgotLink = 'a.pull-right';
     public static $mail = '#email_address';
     public static $subSave = 'div.buttons-set > button.button > span > span';
     public static $msg = 'li.success-msg';

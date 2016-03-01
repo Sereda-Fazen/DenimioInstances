@@ -99,7 +99,7 @@ class MyAccountCest
         $I->see('Your XX012 Contest account was successfully deleted', 'li.success-msg');
 
     }
-
+/*
     function MyAccountGiftCard(Step\Acceptance\LoginSteps $I, \Page\MyAccount $MyAccountPage)
     {
         $I->login();
@@ -112,20 +112,21 @@ class MyAccountCest
         $I->getVisibleText('The maximum number of times to enter gift card code is 10!', '.error-msg');
 
     }
+*/
     function MyRewardsPoint(Step\Acceptance\LoginSteps $I, \Page\MyAccount $MyAccountPage)
     {
         $I->login();
         $MyAccountPage->accountMyRewards();
 
     }
-
+/*
     function MyTickets(Step\Acceptance\LoginSteps $I, \Page\MyAccount $MyAccountPage)
     {
         $I->login();
         $MyAccountPage->accountMyTickets();
 
     }
-
+*/
 
 
 
