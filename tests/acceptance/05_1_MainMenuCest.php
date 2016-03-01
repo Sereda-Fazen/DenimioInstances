@@ -57,11 +57,11 @@ class MainMenuCest
      * Check Random Brands
      * @param Acceptance\HomeSteps $I
      */
-
+/*
     function checkRandomBrands(Step\Acceptance\HomeSteps $I){
         $I->getCheckRandomBrands();
     }
-
+*/
     /**
     * Check Products Arrows
     * @param \Page\MainMenu $homePage
