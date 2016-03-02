@@ -10,7 +10,7 @@ class CheckoutSteps extends \AcceptanceTester
         $I->waitForElementVisible('#billing\3A firstname');
         $I->fillField($billing.'firstname', 'alex');
         $I->fillField($billing.'lastname', 'sereda');
-        $I->fillField($billing.'email', 'dev.denimio@yahoo.com');
+        $I->fillField($billing.'email', 'denimio_test@yahoo.com');
         $I->fillField('#billing-new-address-form > ul > li:nth-of-type(3) > div.one-field > input.required-entry.input-text', 'Test street 22V');
         $I->fillField($billing.'city', 'Kharkov');
         $I->fillField($billing.'postcode', '1rr354');
@@ -45,37 +45,22 @@ class CheckoutSteps extends \AcceptanceTester
     public function checkOnShoppingCart()
         {
             $I = $this;
-            $wallet = 'WALLET';
             $I->amOnPage('/');
-            $I->fillField('#search', 'wallet');
-            $I->click('i.fa.fa-search');
-            $I->see('SEARCH RESULTS FOR', 'h1');
-            $I->see($wallet);
+            $I->click('//div[@class="parentMenu"]/a/span');
 
-            $I->wait(2);
+            $I->waitForElement('//div[@class="category-products"]');
+            $I->click('div.category-products > ul:nth-of-type(1) > li.item.first > div.item-inner > div.images-content > a.item-link.product-image > img');
 
-            $I->moveMouseOver('//div[@class="category-products"]/ul[1]/li[1]');
-            $I->wait(2);
-
-            $I->moveMouseOver('//div[@class="category-products"]/ul[1]/li[1]//div/div/div/div/button');
-            $I->click('//div[@class="category-products"]/ul[1]/li[1]//div/div/div/div/button');
-
-            //------------------
-            $I->waitForAjax(10);
-            $I->waitForElement('//div[@class="wrapper_box"]');
+            $I->waitForElement('#product-options-wrapper');
+            $I->click('//dd[@class="last"]/div/select/option');
+            $I->waitForElementVisible('//dd[@class="last"]/div/select/option[2]');
+            $I->click('//dd[@class="last"]/div/select/option[2]');
+            $I->click('button.button.btn-cart > span');
+            $I->waitForElement('div.wrapper_box');
             $I->click('//a[@id="shopping_cart"]');
+
             $I->see('SHOPPING CART', 'h1');
         }
-            //------------------
-            /*
-                $I->waitForElementVisible('select.required-entry');
-                $I->click('select.required-entry');
-                $I->click('//*[@id="attribute144"]/option[2]');
-                $I->click('button.button.btn-cart > span');
-                $I->waitForElementVisible('div.wrapper_box');
-                $I->click('//*[@id="shopping_cart"]');
-            */
-
 
 
         public function checkProcessTypeData()
@@ -89,6 +74,8 @@ class CheckoutSteps extends \AcceptanceTester
             $I->checkDataForGuest();
 
             $I->waitForElementNotVisible('//div[@class="ajax-loader3"]',20);
+
+            $I->click('#s_method_freeshipping_freeshipping');
 
             $I->click('#p_method_paygent_cc');
             // Cards
@@ -111,11 +98,10 @@ class CheckoutSteps extends \AcceptanceTester
            $I->click('#payment-tool-tip-close');
            $I->fillField('#paygent_cc_cc_cid', '123');
 
-            $I->scrollDown(150);
-            $I->click('#edit_shipping_document_confirmation');
-            $I->click('//*[@id="edit_shipping_document_confirmation"]/option[4]');
-            $I->click('#onestepcheckout-button-place-order');
-            $I->waitForElementVisible('li.error-msg');
+            $I->scrollDown(500);
+            $I->moveMouseOver('//button[@id="onestepcheckout-button-place-order"]/span');
+            $I->click('//button[@id="onestepcheckout-button-place-order"]/span');
+            $I->waitForElement('li.error-msg');
             $I->see('Network Error, E02004','li.error-msg');
 
     }
