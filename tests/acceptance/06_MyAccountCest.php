@@ -5,13 +5,14 @@ use Step\Acceptance;
  */
 class MyAccountCest
 {
-
+/*
     function MyAccountDashboard(\Step\Acceptance\LoginSteps $I, \Page\MyAccount $myAccountPage)
     {
         $I->login();
         $myAccountPage->accountDashboard();
 
     }
+*/
     function MyAccountInfo(\Step\Acceptance\LoginSteps $I, \Page\MyAccount $myAccountPage)
     {
         $I->login();
