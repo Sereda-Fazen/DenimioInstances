@@ -78,10 +78,12 @@ class MainMenu
         $I->seeElement('div.col-main');
         $I->click(self::$newArrivals);
         $I->seeElement('div.col-main');
+        /*
         $I->click(self::$brands);
         $I->seeElement('//*[@class="product-image"]');
         $I->click(self::$calendar);
         $I->seeElement('span.fc-header-title > h2');
+        */
         return $this;
     }
 
