@@ -124,7 +124,7 @@ class HomePageCest
         }
 
 
-
+/*
         function footerSubscribe(\Page\HomePage $homePage)
         {
             $homePage->subscribeEmptyField();
@@ -132,7 +132,7 @@ class HomePageCest
         //    $homePage->subscribeIsNotEmail('dev.denimio@yahoo.com');
             $homePage->subscribeSuccess('johndoe@domain.com');
         }
-
+*/
 
 
 

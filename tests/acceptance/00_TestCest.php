@@ -4,11 +4,13 @@ use \Step\Acceptance;
 class TestCest {
 
 
-    function forgotSuccess(Step\Acceptance\ForgotPassSteps $I, \Page\ForgotPass $forgotPage)
+    function footerSubscribe(\Page\HomePage $homePage)
     {
-        $forgotPage->forgot('denimio_test@yahoo.com');
+        $homePage->subscribeEmptyField();
+        $homePage->subscribeInvalidEmail('123qwerty');
+        //    $homePage->subscribeIsNotEmail('dev.denimio@yahoo.com');
+        $homePage->subscribeSuccess('johndoe@domain.com');
     }
-
 
 
 
