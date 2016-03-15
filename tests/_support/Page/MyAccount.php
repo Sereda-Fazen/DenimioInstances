@@ -98,7 +98,7 @@ class MyAccount
      * XX012Contest delete
      */
 
-    public static $XX012Contest = 'div.block-content > ul > li:nth-of-type(11)';
+    public static $XX012Contest = 'div.block-content > ul > li:nth-of-type(13)';
     public static $browse = '#customer-upload > div.qq-uploader > div.qq-upload-button > input';
     public static $deleteContest = '//div[@class="calcel-account"]/button/span';
 
@@ -134,7 +134,7 @@ class MyAccount
      * My Rewards
      */
 
-    public static $myRewards = 'div.block-content > ul > li:nth-of-type(13) > a';
+    public static $myRewards = 'div.block-content > ul > li:nth-of-type(12) > a';
     public static $rewardsInformation = 'div.box-account.box-info.box-rewardpoints-summary > div.box-head > h2';
     //point
 
